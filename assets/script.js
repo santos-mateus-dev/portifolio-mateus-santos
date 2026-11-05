@@ -1,3 +1,31 @@
+
+// Menu Hambúrguer Responsivo
+const menuHamburger = document.querySelector('.menu-hamburger');
+const navList = document.querySelector('.nav-list');
+const menuOverlay = document.querySelector('.menu-overlay');
+const navLinksItems = document.querySelectorAll('.nav-list a');
+
+function toggleMenu() {
+    menuHamburger.classList.toggle('active');
+    navList.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+}
+
+function closeMenu() {
+    menuHamburger.classList.remove('active');
+    navList.classList.remove('active');
+    menuOverlay.classList.remove('active');
+}
+
+if (menuHamburger && navList && menuOverlay) {
+    menuHamburger.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+
+    navLinksItems.forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
 const contatosForm = document.querySelector('.contatos-form');
 
 if (contatosForm) {
