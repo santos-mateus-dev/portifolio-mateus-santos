@@ -463,6 +463,12 @@ ul {
   transform: translateY(0);
 }
 
+/* Para evitar overflow horizontal em qualquer tela */
+body, html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 
 /* Responsividade para Celulares e Tablets (Até 768px) */
 @media (max-width: 768px) {
@@ -474,7 +480,8 @@ ul {
     position: fixed;
     top: 0;
     right: -100%; /* Escondido fora da tela à direita */
-    width: 280px;
+    width: 70%;
+    max-width: 260px;
     height: 100vh;
     background-color: var(--bg-secondary);
     flex-direction: column;
@@ -485,6 +492,7 @@ ul {
     transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     border-left: 1px solid var(--border-color);
     z-index: 999;
+    font-size: 1.2rem;
   }
 
   /* Classe ativada via JavaScript para abrir o menu */
