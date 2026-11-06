@@ -5,6 +5,7 @@ const navList = document.querySelector('.nav-list');
 const menuOverlay = document.querySelector('.menu-overlay');
 const navLinksItems = document.querySelectorAll('.nav-list a');
 
+
 function toggleMenu() {
     menuHamburger.classList.toggle('active');
     navList.classList.toggle('active');
@@ -25,6 +26,40 @@ if (menuHamburger && navList && menuOverlay) {
         link.addEventListener('click', closeMenu);
     });
 }
+
+// =========================================
+// TEMA CLARO E ESCURO (DARK/LIGHT MODE)
+// =========================================
+const themeToggleBtn = document.getElementById('tema-toggle');
+const themeIcon = document.getElementById('theme-icon');
+
+// 1. Verifica se já existe um tema salvo no navegador ao carregar a página
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    themeIcon.classList.replace('bi-sun', 'bi-moon-stars');
+    themeToggleBtn.setAttribute('aria-pressed', 'true');
+}
+
+// 2. Adiciona o evento de clique no botão
+themeToggleBtn.addEventListener('click', () => {
+    // Alterna a classe do tema no body
+    document.body.classList.toggle('light-theme');
+    
+    const isLight = document.body.classList.contains('light-theme');
+    
+    // Atualiza o atributo de acessibilidade (aria-pressed)
+    themeToggleBtn.setAttribute('aria-pressed', isLight);
+    
+    // Altera o ícone e salva a preferência no localStorage
+    if (isLight) {
+        themeIcon.classList.replace('bi-sun', 'bi-moon-stars');
+        localStorage.setItem('theme', 'light');
+    } else {
+        themeIcon.classList.replace('bi-moon-stars', 'bi-sun');
+        localStorage.setItem('theme', 'dark');
+    }
+});
 
 const contatosForm = document.querySelector('.contatos-form');
 

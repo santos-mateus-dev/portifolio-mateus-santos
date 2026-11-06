@@ -10,7 +10,7 @@ html {
 }
 
 :root {
-  --bg-primary: #0f172a;
+ --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
@@ -20,12 +20,65 @@ html {
   --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Tema Claro (Ativado via classe no HTML) */
+.light-theme {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --card-bg: #ffffff;
+  --primary-color: #0284c7;
+  --primary-hover: #0369a1;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+.light-theme .nav-list a {
+  color: #ffffff;
+}
+
+.light-theme .nav-list button {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-main);
   line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Importante para suavizar a troca */
 }
+
+/* =========================================
+   ESTILIZAÇÃO DO BOTÃO DE TEMA
+   ========================================= */
+.tema-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tema-toggle-btn:hover {
+  background-color: var(--card-bg);
+  border-color: var(--primary-color);
+  color: var(--primary-color); /* O ícone ganha a cor de destaque do tema */
+  transform: none;
+}
+
+.tema-toggle-btn i {
+  font-size: 1.1rem;
+}
+/*===================*/
 
 a {
   text-decoration: none;
@@ -105,7 +158,9 @@ ul {
 
 .nav-list {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
 }
 
 .nav-list a {
@@ -230,7 +285,7 @@ ul {
 
 /* Efeito Hover com identidade visual sutil */
 .btn-github:hover {
-  background-color: #24292e; /* Tom clássico do GitHub */
+  background-color: #94a3b8; /* Tom clássico do GitHub */
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
