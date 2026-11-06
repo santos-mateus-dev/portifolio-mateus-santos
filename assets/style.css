@@ -575,4 +575,32 @@ body, html {
   .menu-hamburger.active .bar:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
+
+  .perfil-img {
+    width: 200px; /* Aumente proporcionalmente para telas menores */
+    height: 200px;
+  }
+
+  .principal-container {
+    flex-direction: column-reverse; /* No celular, a foto pode vir acima ou abaixo do texto */
+    text-align: center;
+  }
+
+  .principal-texto {
+    align-items: center; /* Centraliza os elementos no mobile */
+  }
+
+  .btn-github,
+  .btn-linkedin,
+  .btn-primeiro {
+    padding: 0.5rem 1rem;     /* Reduz o espaço interno do botão */
+    font-size: 0.875rem;     /* Diminui um pouco o texto */
+  }
+
+  /* Se os botões tiverem ícones, diminua-os proporcionalmente também */
+  .btn-github i,
+  .btn-linkedin i {
+    font-size: 1rem;         /* Reduz de 1.2rem para 1rem */
+  }
+
 }
