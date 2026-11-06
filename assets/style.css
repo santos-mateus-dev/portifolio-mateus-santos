@@ -10,7 +10,7 @@ html {
 }
 
 :root {
- --bg-primary: #0f172a;
+  --bg-primary: #0f172a;
   --bg-secondary: #1e293b;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
@@ -48,7 +48,8 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-main);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Importante para suavizar a troca */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Importante para suavizar a troca */
 }
 
 /* =========================================
@@ -71,13 +72,15 @@ body {
 .tema-toggle-btn:hover {
   background-color: var(--card-bg);
   border-color: var(--primary-color);
-  color: var(--primary-color); /* O ícone ganha a cor de destaque do tema */
+  color: var(--primary-color);
+  /* O ícone ganha a cor de destaque do tema */
   transform: none;
 }
 
 .tema-toggle-btn i {
   font-size: 1.1rem;
 }
+
 /*===================*/
 
 a {
@@ -235,7 +238,8 @@ ul {
 
 .botoes {
   display: flex;
-  flex-wrap: wrap; /* Permite que quebrem de linha caso a tela seja menor */
+  flex-wrap: wrap;
+  /* Permite que quebrem de linha caso a tela seja menor */
   gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -266,13 +270,16 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* Espaço entre o ícone e o texto */
+  gap: 8px;
+  /* Espaço entre o ícone e o texto */
   padding: 0.75rem 1.5rem;
-  border-radius: 8px; /* Bordas arredondadas combinando com o layout */
+  border-radius: 8px;
+  /* Bordas arredondadas combinando com o layout */
   font-weight: 500;
   text-decoration: none;
   color: #ffffff;
-  background-color: #1e293b; /* Cor de fundo padrão elegante */
+  background-color: #1e293b;
+  /* Cor de fundo padrão elegante */
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
@@ -285,13 +292,15 @@ ul {
 
 /* Efeito Hover com identidade visual sutil */
 .btn-github:hover {
-  background-color: #94a3b8; /* Tom clássico do GitHub */
+  background-color: #94a3b8;
+  /* Tom clássico do GitHub */
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
 }
 
 .btn-linkedin:hover {
-  background-color: #0a66c2; /* Tom clássico do LinkedIn */
+  background-color: #0a66c2;
+  /* Tom clássico do LinkedIn */
   border-color: #0a66c2;
   transform: translateY(-2px);
 }
@@ -308,9 +317,12 @@ ul {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 24px; /* Bordas arredondadas modernas (ou use 50% para formato redondo) */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
-  border: 1px solid var(--accent-cyan); /* Borda opcional com a cor de destaque do seu tema */
+  border-radius: 24px;
+  /* Bordas arredondadas modernas (ou use 50% para formato redondo) */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  /* Sombra elegante */
+  border: 1px solid var(--accent-cyan);
+  /* Borda opcional com a cor de destaque do seu tema */
   transition: transform 0.3s ease;
 }
 
@@ -582,7 +594,8 @@ ul {
 }
 
 /* Para evitar overflow horizontal em qualquer tela */
-body, html {
+body,
+html {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -597,11 +610,12 @@ body, html {
   .nav-list {
     position: fixed;
     top: 0;
-    right: -100%; /* Escondido fora da tela à direita */
+    right: -100%;
+    /* Escondido fora da tela à direita */
     width: 70%;
     max-width: 260px;
     height: 100vh;
-    background-color: var(--bg-secondary);
+    background-color: #1e293b;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -618,6 +632,17 @@ body, html {
     right: 0;
   }
 
+  .nav-list a:hover,
+  .light-theme .nav-list a:hover {
+    color: var(--accent-blue) !important;
+  }
+
+  .nav-list .tema-toggle-btn,
+  .light-theme .nav-list .tema-toggle-btn {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
   /* Animação do botão hambúrguer virando um "X" */
   .menu-hamburger.active .bar:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
@@ -631,31 +656,41 @@ body, html {
     transform: translateY(-9px) rotate(-45deg);
   }
 
+  .light-theme .menu-hamburger .bar {
+    background-color: #ffffff;
+  }
+
   .perfil-img {
-    width: 200px; /* Aumente proporcionalmente para telas menores */
+    width: 200px;
+    /* Aumente proporcionalmente para telas menores */
     height: 200px;
   }
 
   .principal-container {
-    flex-direction: column-reverse; /* No celular, a foto pode vir acima ou abaixo do texto */
+    flex-direction: column-reverse;
+    /* No celular, a foto pode vir acima ou abaixo do texto */
     text-align: center;
   }
 
   .principal-texto {
-    align-items: center; /* Centraliza os elementos no mobile */
+    align-items: center;
+    /* Centraliza os elementos no mobile */
   }
 
   .btn-github,
   .btn-linkedin,
   .btn-primeiro {
-    padding: 0.5rem 1rem;     /* Reduz o espaço interno do botão */
-    font-size: 0.875rem;     /* Diminui um pouco o texto */
+    padding: 0.5rem 1rem;
+    /* Reduz o espaço interno do botão */
+    font-size: 0.875rem;
+    /* Diminui um pouco o texto */
   }
 
   /* Se os botões tiverem ícones, diminua-os proporcionalmente também */
   .btn-github i,
   .btn-linkedin i {
-    font-size: 1rem;         /* Reduz de 1.2rem para 1rem */
+    font-size: 1rem;
+    /* Reduz de 1.2rem para 1rem */
   }
 
 }
