@@ -130,7 +130,21 @@ ul {
 }
 
 .principal-container {
-  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Garante que a coluna de texto ocupe o espaço adequado */
+.principal-texto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .principal {
@@ -166,7 +180,9 @@ ul {
 
 .botoes {
   display: flex;
+  flex-wrap: wrap; /* Permite que quebrem de linha caso a tela seja menor */
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .btn {
@@ -189,16 +205,63 @@ ul {
   box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
 }
 
-.btn-segundo {
-  background-color: transparent;
-  color: var(--text-main);
-  border: 1px solid var(--border-color);
+/* Estilo base compartilhado pelos botões sociais (ou você pode aproveitar a classe .btn geral) */
+.btn-github,
+.btn-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px; /* Bordas arredondadas combinando com o layout */
+  font-weight: 500;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #1e293b; /* Cor de fundo padrão elegante */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
-.btn-segundo:hover {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
+/* Tamanho dos ícones dentro dos botões */
+.btn-github i,
+.btn-linkedin i {
+  font-size: 1.2rem;
+}
+
+/* Efeito Hover com identidade visual sutil */
+.btn-github:hover {
+  background-color: #24292e; /* Tom clássico do GitHub */
+  border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
+}
+
+.btn-linkedin:hover {
+  background-color: #0a66c2; /* Tom clássico do LinkedIn */
+  border-color: #0a66c2;
+  transform: translateY(-2px);
+}
+
+/* Estilização da imagem e seu container */
+.imagem {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.perfil-img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 24px; /* Bordas arredondadas modernas (ou use 50% para formato redondo) */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  border: 1px solid var(--accent-cyan); /* Borda opcional com a cor de destaque do seu tema */
+  transition: transform 0.3s ease;
+}
+
+/* Efeito sutil ao passar o mouse na imagem */
+.perfil-img:hover {
+  transform: scale(1.02);
 }
 
 
