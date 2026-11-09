@@ -70,7 +70,6 @@ body {
 }
 
 .tema-toggle-btn:hover {
-  background-color: var(--card-bg);
   border-color: var(--primary-color);
   color: var(--primary-color);
   /* O ícone ganha a cor de destaque do tema */
@@ -691,6 +690,34 @@ html {
   .btn-linkedin i {
     font-size: 1rem;
     /* Reduz de 1.2rem para 1rem */
+  }
+
+  .contatos-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem;
+    /* Margens internas confortáveis para o mobile */
+  }
+
+  /* Garante que o formulário ocupe toda a largura disponível de forma elegante */
+  .contatos-form {
+    width: 100%;
+  }
+
+  /* Deixa os inputs e textareas com um tamanho excelente para toque no celular */
+  .contatos-form input,
+  .contatos-form textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9rem 1rem;
+    /* Um pouco mais alto para facilitar a digitação no mobile */
+  }
+
+  /* Faz o botão de envio ocupar uma boa largura ou ficar em destaque */
+  .contatos-form .btn-primeiro {
+    width: 100%;
+    padding: 0.9rem;
+    text-align: center;
   }
 
 }
