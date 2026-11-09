@@ -316,7 +316,7 @@ ul {
   width: 400px;
   height: 400px;
   object-fit: cover;
-  border-radius: 24px;
+  border-radius: 60%;
   /* Bordas arredondadas modernas (ou use 50% para formato redondo) */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   /* Sombra elegante */
