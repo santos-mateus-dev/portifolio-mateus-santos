@@ -388,6 +388,10 @@ ul {
 }
 
 .habilidades-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+
   background-color: var(--bg-secondary);
   padding: 2.5rem;
   border-radius: 12px;
@@ -401,14 +405,50 @@ ul {
 }
 
 .habilidades-card h3 {
-  font-size: 1.3rem;
+  grid-column: 1 / -1;
+  margin-bottom: 0.5rem;
+  
+  font-size: 1.3rem;  
   color: var(--accent-blue);
   margin-bottom: 1rem;
+  
 }
 
 .habilidades-card p {
   color: var(--text-muted);
 }
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 100px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-main);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tech-item i {
+  font-size: 2rem;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.tech-item+.tech-item {
+  margin-top: 0;
+}
+
+.tech-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-blue);
+}
+
 
 /* Seção Projetos */
 .projetos-section {
